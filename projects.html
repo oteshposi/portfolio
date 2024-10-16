@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Projects Page</title>
+</head>
+
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; 
+    padding-top: 190px;
+    z-index: -1;
+}
+
+.project-box {
+    background-color: #022908;
+    border-radius: 15px;
+    width: 400px; 
+    height: 400px;
+    margin: 10px;
+    padding: 15px; 
+    position: relative;
+    text-align: center; 
+    color: white;
+}
+
+.project-image {
+    width: 100%;
+    height: 80%;
+    display: block; 
+    border-radius: 10px; 
+}
+
+.download-link {
+    position: absolute; /* Position the arrow link */
+    bottom: 15px; /* Distance from bottom */
+    right: 15px; /* Distance from right */
+    font-size: 24px; /* Size of the arrow */
+    color: white; /* Color of the arrow */
+    text-decoration: none; /* Remove underline */
+}
+
+ .header {
+    background-color: white;
+    padding: 20px;
+    display: inline-block; 
+    width: 60%; 
+    margin: auto; 
+    position: relative;
+    left: 270px;
+    height: 20px;
+    border-radius: 15px;
+    position: fixed;
+    z-index: 10;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-evenly; 
+    list-style: none; 
+    padding: 0;
+    position: relative;
+    bottom: 25px;
+    border-radius: 10px;
+    font-family: Roboto Condensed, sans-serif;
+}
+
+.nav-list li {
+    color: white; 
+    background-color: black; 
+    padding: 10px 15px; 
+    border-radius: 10px;
+    transition: transform 0.5s;
+}
+
+.nav-list li:hover {
+    transform: scale(1.07); 
+}
+
+</style>
+<body style="background-color: black; padding: 0px; margin: 0px;">
+
+    <header class="header">
+        <nav>
+            <ul class="nav-list" style="border-radius: 20px">
+                <li><a href="./index.html" style="color: white; text-decoration: none;"> <b>HOME</b></a></li>
+                <li><a href="./index3.html" style="text-decoration: none; color: white;"><b>ABOUT ME</b></a></li>
+                <li><a href="./Resume.html" style="text-decoration: none; color: white;"><b>MY RESUME</a></b></li>
+                <li><a href="./projects.html" style="text-decoration: none; color: white;"><b>PROJECTS</button></a></li>
+                <li><a href="./contact.html" style="text-decoration: none; color: white;"><b>CONTACT</b></a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="projects-container">
+    <div class="project-box">
+        <img src="./Atmospheric water generator protoype 1 (1).png"  alt="Project 1" class="project-image">
+           <div style="position: relative; top: 5px; left: 50px; font-size: 32px; width: 300px; z-index: 10;" ><b>Atmospheric Water Generator</b></div>
+        <a href="path/to/document1.pdf" class="download-link" download>➔</a>
+    </div>
+    <div class="project-box">
+        <img src="./Screenshot 2024-10-09 135307.png" style=" filter: blur(2px); display: block; border-radius: 15px; width: 480px; height: 400px; position: relative; right: 85px; bottom: 80px;" alt="Project 2" >
+           <div style="position: relative; bottom: 70px; left: 50px; font-size: 32px; width: 300px; height: 490px; z-index: 10; " ><b>Science Research Paper 1</b></div>
+        <a href="path/to/document2.pdf" class="download-link" download>➔</a>
+    </div>
+        <div class="project-box">
+             <img src="./WhatsApp Image 2024-10-09 at 14.16.14_3231c862.jpg" alt="Project 3" class="project-image">
+           <div style="position: relative; top: 0px; left: 50px; font-size: 32px; width: 300px; z-index: 10;" ><b>AI Powered Survey Bird</b></div>
+            <a href="path/to/document3.pdf" class="download-link" download>➔</a>
+        </div>
+        <div class="project-box">
+            <img src="./Screenshot 2024-10-09 143154.png" style=" filter: blur(2px); display: block; border-radius: 15px; width: 460px; height: 300px; position: relative; right: 65px; bottom: 0px;" alt="Project 4" >
+           <div style="position: relative; top: 15px; left: 50px; font-size: 32px; width: 300px; z-index: 10;" ><b>Science Research Paper 2</b></div>
+            <a href="path/to/document4.pdf" class="download-link" download>➔</a>
+        </div>
+        <div class="project-box">
+            <img src="path/to/image5.jpg" alt="Project 5" class="project-image">
+           <div style="position: relative; top: 0px; left: 50px; font-size: 32px; width: 300px; z-index: 10;" ><b>Moth Repelling Lamp</b></div>
+            <a href="path/to/document5.pdf" class="download-link" download>➔</a>
+        </div>
+        <div class="project-box">
+            <img src="path/to/image6.jpg" alt="Project 6" class="project-image">
+           <div style="position: relative; top: 0px; left: 50px; font-size: 32px; width: 300px; z-index: 10;" ><b>Coming Soon</b></div>
+            <a href="path/to/document6.pdf" class="download-link" download>➔</a>
+        </div>
+        <div class="project-box">
+            <img src="path/to/image7.jpg" alt="Project 7" class="project-image">
+           <div style="position: relative; top: 0px; left: 50px; font-size: 32px; width: 300px; z-index: 10;" ><b>Coming Soon</b></div>
+            <a href="path/to/document7.pdf" class="download-link" download>➔</a>
+        </div>
+        <div class="project-box">
+            <img src="path/to/image8.jpg" alt="Project 8" class="project-image">
+           <div style="position: relative; top: 0px; left: 50px; font-size: 32px; width: 300px; z-index: 10;" ><b>Coming Soon</b></div>
+            <a href="path/to/document8.pdf" class="download-link" download>➔</a>
+        </div>
+    </div>
+</body>
+</html>
