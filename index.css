@@ -1,7 +1,21 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+.section-label {
+  width: 150px;
+  height: 60px;
+  font-size: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #022908;
+  margin: 30px auto;
+  margin-top: 100px;
+}
 button {
   background-color: black;
   border: 2px solid white;
@@ -57,7 +71,7 @@ custom-button.learn-more .circle {
   margin: 0;
   width: 3rem;
   height: 3rem;
-  background: #02a71e;
+  background: #022908;
   border-radius: 1.625rem;
 }
 
@@ -217,13 +231,15 @@ custom-button:hover .button-text {
   height: 40px;
   border-radius: 50%;
   cursor: pointer;
-  position: relative;
-  bottom: 270px;
   z-index: 1;
 }
 
 .scroll-left {
   left: 10px;
+}
+
+.text-class{
+    font-size: 130px;
 }
 
 .scroll-right {
@@ -236,19 +252,14 @@ custom-button:hover .button-text {
 }
 
 .section-att {
+  margin: 100px ;
   color: white;
-  height: 30px;
-  position: relative;
-  left: 600px;
-  top: 150px;
-  display: inline-block;
+  text-align: center;
 }
 
 .main_body {
   background-image: url(./Download\ premium\ image\ of\ Gray\ grid\ line\ pattern\ on\ a\ black\ background\ by\ marinemynt\ about\ grid\,\ black\ grid\ paper\,\ wallpaper\ grid\,\ grid\ paper\,\ and\ grid\ lines\ 2349532.png);
-  height: 1000px;
-  width: 100%px;
-  margin: 0px;
+  height: 500px;
 }
 
 .header {
@@ -257,7 +268,7 @@ custom-button:hover .button-text {
   justify-content: center;
   align-items: center;
   padding: 10px;
-  position: fixed;
+  position: relative;
   z-index: 1000;
 }
 
@@ -389,22 +400,27 @@ custom-button:hover .button-text {
 
 .skills {
   width: 100%;
+  overflow: hidden;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 20px;
-  padding: 0 40px;
+  gap: 10px;
+  padding: 40px;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .skills .item {
   width: 100%;
-  background-color: green;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #022908;
   border-radius: 20px;
   padding: 20px;
   text-align: center;
 }
 
 .skills .item .image-logos img {
-    width: 60px;
+  width: 60px;
 }
 
 .div-2_div_div-2 {
@@ -816,13 +832,33 @@ custom-button:hover .button-text {
   left: 740px;
 }
 
+.mid-msg {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 40px auto;
+  font-size: 30px;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    gap: 80px;
+}
+
+.logo img {
+    width: 40px;
+}
+
 /* Default styles (for larger screens like desktops) */
 body {
   font-family: Arial, sans-serif;
   background-color: #000;
   color: white;
 }
-
 
 /* Media query for tablets devices */
 @media (max-width: 768px) {
