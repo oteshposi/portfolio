@@ -262,11 +262,7 @@ custom-button:hover .button-text {
     justify-content: space-between; 
     align-items: center; 
     padding: 10px; 
-    margin: 0 auto; 
-    position: relative; 
-    top: 0; 
-    left: 260px; 
-    position: fixed; 
+    margin: 0 auto;
     z-index: 1000; 
     padding: 0px;
 }
