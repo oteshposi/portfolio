@@ -301,20 +301,41 @@ custom-button:hover .button-text {
   color: black;
   margin: 0;
   white-space: nowrap;
-  font-family: Roboto Condensed, sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .div_header {
   display: flex;
-  height: 45px;
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
   gap: 15px;
 }
 
 .button-div_header {
-  text-decoration: none;
+  background-color: #007bff; /* Set a background color */
   color: white;
   font-size: 11px;
+  text-decoration: none;
+  padding: 10px 15px; /* Add some padding */
+  border-radius: 5px; /* Optional for rounded corners */
+  text-align: center; /* Center the text */
 }
+
+.button-div_header:hover {
+  background-color: #0056b3; /* Change background on hover */
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 768px) {
+  .div_header {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align to the left */
+  }
+  .button-div_header {
+    width: 100%; /* Full width buttons */
+    text-align: center; /* Center text */
+  }
+}
+
 
 .hero-container {
   padding-top: 130px;
