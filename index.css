@@ -331,16 +331,6 @@ custom-button:hover .button-text {
 }
 
 
-@media (max-width: 768px) {
-  .div_header {
-    flex-direction: column; 
-    align-items: flex-start; 
-  }
-  .button-div_header {
-    width: 100%; /* Full width buttons */
-    text-align: center; /* Center text */
-  }
-}
 
 
 .hero-container {
@@ -921,37 +911,4 @@ body {
   font-family: Arial, sans-serif;
   background-color: #000;
   color: white;
-}
-
-/* Media query for tablets devices */
-@media (max-width: 768px) {
-  .header {
-    width: 80%;
-  }
-
-  form {
-    max-width: 100%;
-  }
-}
-
-/* Media query for mobiles */
-@media (max-width: 480px) {
-  .header {
-    width: 100%;
-  }
-
-  form {
-    max-width: 100%;
-    padding: 10px;
-  }
-
-  .nav-list {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .nav-list li {
-    width: 100%;
-    margin-bottom: 10px;
-  }
 }
