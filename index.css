@@ -311,24 +311,30 @@ custom-button:hover .button-text {
 }
 
 .button-div_header {
-  background-color: #007bff; /* Set a background color */
+  background-color: #000000; 
   color: white;
   font-size: 11px;
   text-decoration: none;
-  padding: 10px 15px; /* Add some padding */
-  border-radius: 5px; /* Optional for rounded corners */
-  text-align: center; /* Center the text */
+  padding: 10px 15px; 
+  border-radius: 5px; 
+  text-align: center; 
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+
 }
 
 .button-div_header:hover {
-  background-color: #0056b3; /* Change background on hover */
+  background-color: #000000;
+    transform: scale(1.05);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+
+
 }
 
-/* Media Query for Responsive Design */
+
 @media (max-width: 768px) {
   .div_header {
-    flex-direction: column; /* Stack items vertically */
-    align-items: flex-start; /* Align to the left */
+    flex-direction: column; 
+    align-items: flex-start; 
   }
   .button-div_header {
     width: 100%; /* Full width buttons */
