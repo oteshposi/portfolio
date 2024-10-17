@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome Page</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #1e90ff, #ff6347);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .welcome-container {
+      text-align: center;
+      background-color: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .welcome-container:hover {
+      transform: translateY(-5px);
+    }
+
+    .welcome-container h1 {
+      font-size: 2.5rem;
+      color: #333;
+      margin-bottom: 10px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .welcome-container p {
+      font-size: 1.2rem;
+      color: #666;
+      margin-bottom: 30px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .name-form {
+      margin-top: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .name-form input {
+      padding: 12px 20px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      width: 70%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .name-form input:focus {
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      outline: none;
+    }
+
+    .name-form button {
+      margin-top: 15px;
+      padding: 12px 30px;
+      border: none;
+      background-color: #1e90ff;
+      color: white;
+      border-radius: 50px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      box-shadow: 0 6px 15px rgba(30, 144, 255, 0.4);
+    }
+
+    .name-form button:hover {
+      background-color: #ff6347;
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(255, 99, 71, 0.4);
+    }
+
+    #welcomeMessage {
+      margin-top: 20px;
+      font-size: 1.5rem;
+      color: #333;
+      display: none;
+      animation: fadeIn 2.5s ease-in-out;
+    }
+
+    #proceedButton {
+      display: none;
+      margin-top: 20px;
+      padding: 12px 30px;
+      background-color: #1e90ff;
+      color: white;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 6px 15px rgba(30, 144, 255, 0.4);
+    }
+
+    #proceedButton:hover {
+      background-color: #ff6347;
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(255, 99, 71, 0.4);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="welcome-container">
+    <h1>Welcome to my website!</h1>
+    <p>Please enter your name to get started:</p>
+    <form class="name-form" onsubmit="showWelcomeMessage(event)">
+      <input type="text" id="nameInput" placeholder="Enter your name" required>
+      <button type="submit">Submit</button>
+    </form>
+    <p id="welcomeMessage"></p>
+    <a id="proceedButton" href="index.html">Proceed to Site</a>
+  </div>
+
+  <script>
+    function showWelcomeMessage(event) {
+      event.preventDefault(); // Prevent form submission
+      
+      // Get the name entered in the input field
+      var name = document.getElementById('nameInput').value;
+      
+      // Create the personalized message
+      var message = 'Welcome to my website, ' + name + '!';
+      
+      // Display the message in the welcomeMessage paragraph
+      var welcomeMessageElement = document.getElementById('welcomeMessage');
+      welcomeMessageElement.textContent = message;
+      welcomeMessageElement.style.display = 'block';
+      
+      // Hide the form after submission
+      document.querySelector('.name-form').style.display = 'none';
+      
+      // Show the 'Proceed to Site' button
+      var proceedButton = document.getElementById('proceedButton');
+      proceedButton.style.display = 'inline-block';
+    }
+  </script>
+</body>
+</html>
