@@ -41,7 +41,7 @@
     .highlight {
       color: #00b11b;
       font-weight: bold;
-      font-size: 25px;
+      font-size: 1.7vw;
     }
 
     a {
@@ -57,68 +57,146 @@
       background-color: #111;
       padding: 40px;
       border-radius: 10px;
-      font-size: 18px;
+      font-size: 1.2vw;
     }
 
-    .section-att{
-        color: white;
-        height: 30px;
-        position: relative;
-        left: 600px;
-        display: inline-block;
-    }
+    .section-att {
+    color: white;
+    height: 30px; /* Keep height if you need it, otherwise you can set it to auto */
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 100%; /* Full width to center it in the section */
+    position: relative; /* Optional: if you need relative positioning for other elements */
+}
 
-   .header {
+
+   .header-container {
+    display: flex;
+    justify-content: center;
+    border-radius: 30px;
+}
+
+.main-header {
     background-color: white;
-    padding: 20px;
-    display: inline-block; 
-    width: 60%; 
-    margin: auto; 
-    position: relative;
-    left: 270px;
-    height: 20px;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     border-radius: 15px;
     position: fixed;
+    z-index: 1000;
+    padding: 10px;
 }
 
-.nav-list {
+.header-name {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: black;
+    display: inline-block;
+    padding-right: 40px;
+    margin: 7px;
+    font-size: 2rem; /* Responsive font size */
+}
+
+.header-links {
     display: flex;
-    justify-content: space-evenly; 
-    list-style: none; 
-    padding: 0;
-    position: relative;
-    bottom: 25px;
-    border-radius: 10px;
-    font-family: Roboto Condensed, sans-serif;
+    gap: 15px; 
+    margin-right: 40px;
 }
 
-.nav-list li {
-    color: white; 
-    background-color: black; 
-    padding: 10px 15px; 
-    border-radius: 10px;
-    transition: transform 0.5s;
+/* Mobile styles */
+.header-links {
+    display: flex; /* Default for desktop */
 }
 
-.nav-list li:hover {
-    transform: scale(1.07); 
+.header-links nav {
+    background-color: black;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: 'Roboto Condensed', sans-serif;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1rem; /* Responsive font size */
+}
+
+.header-links nav:hover {
+    background-color: #000000; 
+    cursor: pointer;
+    transform: scale(1.05); /* Slight increase in size */
+}
+
+.menu-toggle {
+    display: none; /* Hidden by default */
+    background: none; /* No background */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor */
+    padding: 10px; /* Some padding */
+    z-index: 1100; /* Higher than header */
+}
+
+.bar {
+    display: block; /* Stack the bars */
+    width: 25px; /* Width of the bars */
+    height: 3px; /* Height of the bars */
+    background-color: black; /* Color of the bars */
+    margin: 4px auto; /* Space between bars */
+    transition: all 0.3s; /* Smooth transition */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show button on mobile */
+    }
+
+    .header-links {
+        display: none; /* Hide links by default on mobile */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute; /* Position it absolutely */
+        background-color: white; /* Background for dropdown */
+        width: 100%; /* Full width */
+        top: 100%; /* Position below header */
+        left: 0; /* Align left */
+        border-radius: 0 0 15px 15px; /* Round the bottom corners */
+    }
+
+    .header-links.show {
+        display: flex; /* Show when toggled */
+    }
 }
 
   </style>
+
+  <script>
+  document.querySelector('.menu-toggle').addEventListener('click', function() {
+    const links = document.querySelector('.header-links');
+    links.classList.toggle('show'); // Toggle the 'show' class
+    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', !isExpanded); // Update aria attribute
+});
+
+</script>
 </head>
 <body>
 
-     <header class="header">
-        <nav>
-            <ul class="nav-list" style="border-radius: 20px">
-                <li><a href="./index.html" style="color: white; text-decoration: none;"> <b>HOME</b></a></li>
-                <li><a href="./index3.html" style="text-decoration: none; color: white;"><b>ABOUT ME</b></a></li>
-                <li><a href="./Resume.html" style="text-decoration: none; color: white;"><b>MY RESUME</a></b></li>
-                <li><a href="./projects.html" style="text-decoration: none; color: white;"><b>PROJECTS</button></a></li>
-                <li><a href="./contact.html" style="text-decoration: none; color: white;"><b>CONTACT</b></a></li>
-            </ul>
-        </nav>
-    </header>
+     <div class="header-container">    
+    <div class="main-header">
+        <h1 class="header-name"><b>Olamiposi Otesile</b></h1>
+        <button class="menu-toggle" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <div class="header-links">
+            <nav><b><a href="./index.html" style="color: white; text-decoration: none;">HOME</a></b></nav>
+            <nav><b><a href="./index3.html" style="color: white; text-decoration: none;">ABOUT</a></b></nav>
+            <nav><b><a href="./Resume.html" style="color: white; text-decoration: none;">RESUME</a></b></nav>
+            <nav><b><a href="./projects.html" style="color: white; text-decoration: none;">PROJECTS</a></b></nav>
+            <nav><b><a href="./contact.html" style="color: white; text-decoration: none;">CONTACT</a></b></nav>
+        </div>
+    </div>
+</div>
 
   <div class="container">
     <div style="color: white; background-color: #022908; display: inline-block; margin-bottom: 70px; border-radius: 15px;  position: relative; left: 300px;"><h1 style="color: white; margin-left: 40px; margin-right: 40px; margin-top: 15px; font-size: 40px;">About Me</h1></div>
@@ -126,7 +204,9 @@
       <p>
         Driven by curiosity, innovation, and a deep passion for problem-solving, I am <span style="color: #00b11b;
       font-weight: bold;
-      font-size: 30px;       font-family: 'Playfair Display', serif;
+      font-size: 30px;       
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5vw;
 ">OLAMIPOSI OTESILE</span>, a future-focused Mechatronics enthusiast, aspiring engineer, and dedicated researcher. With a strong foundation in physics and engineering, my journey has been shaped by a relentless desire to explore the intersection of science, technology, and human impact.
       </p>
 
@@ -154,9 +234,8 @@
         With a mindset anchored in discovery, problem-solving, and impact, I am committed to driving forward the next wave of technological advancements. Welcome to my portfolio, and I invite you to explore my journey of innovation and the projects I’m passionate about.
       </p>
     </div>
+      <section class="section-att">© Olamiposi Otesile, 2024. All rights reserved.</section>
   </div>
-
-  <section  class="section-att"> © Olamiposi Otesile, 2024. All rights reserved.</section>
 
 </body>
 </html>
