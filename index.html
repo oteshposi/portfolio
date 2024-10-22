@@ -20,16 +20,28 @@
   
   <div class="header-container">    
     <div class="main-header">
-      <h1 class="header-name" ><b>Olamiposi Otesile</b></h1>
-      <div class="header-links">
-        <nav><b><a href="./index.html" style="color: white; text-decoration: none;">HOME</a></b></nav>
-        <nav><b><a href="./index3.html" style="color: white; text-decoration: none;">ABOUT</a></b></nav>
-        <nav><b><a href="./Resume.html" style="color: white; text-decoration: none;">RESUME</a></b></nav>
-        <nav><b><a href="./projects.html" style="color: white; text-decoration: none;">PROJECTS</a></b></nav>
-        <nav><b><a href="./contact.html" style="color: white; text-decoration: none;">CONTACT</a></b></nav>
-      </div>
+        <h1 class="header-name"><b>Olamiposi Otesile</b></h1>
+        <button class="menu-toggle" aria-expanded="false">Menu</button>
+        <div class="header-links">
+            <nav><b><a href="./index.html" style="color: white; text-decoration: none;">HOME</a></b></nav>
+            <nav><b><a href="./index3.html" style="color: white; text-decoration: none;">ABOUT</a></b></nav>
+            <nav><b><a href="./Resume.html" style="color: white; text-decoration: none;">RESUME</a></b></nav>
+            <nav><b><a href="./projects.html" style="color: white; text-decoration: none;">PROJECTS</a></b></nav>
+            <nav><b><a href="./contact.html" style="color: white; text-decoration: none;">CONTACT</a></b></nav>
+        </div>
     </div>
-  </div> 
+</div>
+
+<script>
+  document.querySelector('.menu-toggle').addEventListener('click', function() {
+    const links = document.querySelector('.header-links');
+    links.classList.toggle('show'); // Toggle the 'show' class
+    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', !isExpanded); // Update aria attribute
+});
+
+</script>
+
     
 <div class="hero-container">
   <div class="inner">
@@ -44,18 +56,21 @@
     <div>
       <p class="par_div-2" style="  font-family: Roboto Condensed, sans-serif;
    ">I’m Olamiposi, a passionate Nigerian student and entrepreneur committed to making a difference through innovation. As the founder of Euretix, my career focuses is on developing creative solutions to everyday challenges, combining my skills in engineering and physics research. I have a strong interest in web design, where I enjoy crafting minimalist, visually engaging interfaces that enhance user experiences using CSS. Currently, I live every second of my life following my motto: "find a way, or make one."</p>
+  
       <custom-button class="learn-more">
         <span class="circle" aria-hidden="true">
           <span class="icon arrow"></span>
         </span>
         <span class="button-text span_div-2"><a href="./index3.html" class="span_div-2">Learn More</a></span>
       </custom-button>
+    </div>  
 
     </div>
   </div>
 </div>
 
-<section style="background-color: black; height: 1900px; padding-bottom: 20px; margin-top: 50px;">
+<section  style="background-color: black; min-height: 100vh; padding-bottom: 2rem; margin-top: 5rem; max-width: 100%;">
+
   <div> 
     
 
@@ -64,16 +79,47 @@
       <h1 class="My-skills-text">My Skills</h1>
       </div>
     </div>
+
+    <div class="skills-container">
+    <div class="skills">
+        <h1 style="font-size: 2rem;">Graphics Design</h1>
+        <p style="padding-top: 30px; padding-bottom: 50px; font-size: 1rem; margin-left: 20px; margin-right: 20px;">Creating visually compelling designs for digital and print media.</p>
+    </div>
+    <div class="skills">
+        <h2 style="font-size: 2rem;">CAD Design</h2>
+        <p  style="padding-top: 30px; padding-bottom: 50px; font-size: 1rem; margin-left: 20px; margin-right: 20px;">Designing 3D models and technical drawings for engineering projects.</p>
+    </div>
+    <div class="skills">
+        <h2>Computer Programming</h2>
+        <p style="padding-top: 30px; padding-bottom: 50px;">Building software solutions and applications using various programming languages.</p>
+    </div>
+
+    <div class="experience-container">
+      <h1 style="font-size: 8rem;">8+</h1>
+      <p style="font-size: 2rem;">Years Experience</p>
+    </div>
+
+    <div class="skills">
+        <h2 style="font-size: 2rem;">Hands-on Engineering</h2>
+        <p style="padding-top: 30px; padding-bottom: 50px;">Applying engineering principles to practical and real-world projects.</p>
+    </div>
+    <div class="skills">
+        <h2 style="font-size: 2rem;">PCB Design</h2>
+        <p style="padding-top: 30px; padding-bottom: 50px;">Designing and fabricating printed circuit boards for electronic devices.</p>
+    </div>
+</div>
+
+
         
-    <div class="skills">  
+    <!-- <div class="skills">  
         <div class="item">
           <h1>Graphic Design</h1>
           <p >Here, you can find a showcase of my skills and projects.</p>
           <p>Feel free to explore!</p>
-        <div class="image-logos">  
-            <img src="./Adobe_Illustrator_Icon_PNG-removebg-preview.png" alt="" >
-            <img src="./Adobe_Photoshop_Icon_PNG-removebg-preview.png" alt="">
-            <img src="./Corel_Logo_-_PNG_Logo_Vector_Brand_Downloads__SVG__EPS_-removebg-preview.png" alt="" style="width: 30px;" >
+          <div class="image-logos">  
+            <img src="./pngwing.com (1).png" alt="" style="width: 40px;" >
+            <img src="./pngwing.com (2).png" alt=""> 
+            <img src="./pngwing.com (3).png" alt="" >
           </div>
         </div>
 
@@ -83,10 +129,8 @@
           <h1>CAD Design</h1>
           <p>Here, you can find a showcase of my skills and projects.</p>
           <p>Feel free to explore!</p>
-          <div class="image-logos-----">
-            <img src="./Autodesk_Fusion_360_Logo_PNG_Vector__PDF__Free_Download-removebg-preview.png" alt="" style="width: 30px;">
-            <img src="./Unreal Engine Logo.jpeg" alt="">
-            <img src="./95719de7be7d905ab9721f7789dca873-removebg-preview.png" alt="">
+          <div class="image-logos">
+            <img src="./Autodesk_Fusion_360_Logo_PNG_Vector__PDF__Free_Download-removebg-preview.png" alt="">
           </div>
 
         </div>
@@ -128,7 +172,7 @@
           <h1>Hands-on Engineering</h1>
           <p>Here, you can find a showcase of my skills and projects.</p>
           <p>Feel free to explore!</p>
-        </div>
+        </div> -->
 
        
       </div>
@@ -169,7 +213,7 @@
     <div class="logo">
       <a href="https://www.linkedin.com/in/olamiposi-otesile-0b536a2a0/"> <img  src="./pngwing.com.png" alt=""></a>
       <a href="https://www.instagram.com/posi.otesh/?hl=en"> <img  src="./Instagram_Logo_PNG_-_Free_Download-removebg-preview.png" alt=""></a>
-      <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSGMhmKpCTNQflQdZjFsmGLCJDfNgHtRFwLDnVdtnzFnzgqXcsKWwNRqMxkwQbjSn"> <img  src="./Icônes_gratuites_Gmail_conçues_par_Freepik-removebg-preview.png" alt=""></a>
+      <!-- <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSGMhmKpCTNQflQdZjFsmGLCJDfNgHtRFwLDnVdtnzFnzgqXcsKWwNRqMxkwQbjSn"> <img  src="./Icônes_gratuites_Gmail_conçues_par_Freepik-removebg-preview.png" alt=""></a> -->
     </div> 
        <section  class="section-att"> © Olamiposi Otesile, 2024. All rights reserved.</section>
 </section>    
