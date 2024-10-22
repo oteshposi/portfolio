@@ -335,16 +335,28 @@ custom-button:hover .button-text {
 
 .menu-toggle {
     display: none; /* Hidden by default */
-    background-color: black;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
+    background: none; /* No background */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor */
+    padding: 10px; /* Some padding */
+    z-index: 1100; /* Higher than header */
+}
+
+.bar {
+    display: block; /* Stack the bars */
+    width: 25px; /* Width of the bars */
+    height: 3px; /* Height of the bars */
+    background-color: black; /* Color of the bars */
+    margin: 4px auto; /* Space between bars */
+    transition: all 0.3s; /* Smooth transition */
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show button on mobile */
+    }
+
     .header-links {
         display: none; /* Hide links by default on mobile */
         flex-direction: column; /* Stack links vertically */
@@ -358,10 +370,6 @@ custom-button:hover .button-text {
 
     .header-links.show {
         display: flex; /* Show when toggled */
-    }
-
-    .menu-toggle {
-        display: block; /* Show button on mobile */
     }
 }
 
