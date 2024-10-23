@@ -16,38 +16,84 @@
 .projects-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; 
-    padding-top: 190px;
-    z-index: -1;
+    justify-content: space-around;
+    padding-top: 150px;
 }
 
 .project-box {
     background-color: #022908;
     border-radius: 15px;
-    width: 400px; 
-    height: 400px;
+    width: 100%;
+    max-width: 400px;
+    min-height: 400px;
     margin: 10px;
-    padding: 15px; 
-    position: relative;
-    text-align: center; 
+    padding: 15px;
+    text-align: center;
     color: white;
+    box-sizing: border-box;
+    transition: transform 0.2s;
+    overflow: hidden;
+    font-size: 2vw;
+}
+
+.project-box:hover {
+    transform: scale(1.05);
 }
 
 .project-image {
-    width: 100%;
-    height: 80%;
-    display: block; 
-    border-radius: 10px; 
+    width: 100%;  /* Take up full width */
+    height: 70%;  /* Only take up 70% of the box's height */
+    border-radius: 10px;
+    object-fit: cover;  /* Ensures the image fills the width while keeping the aspect ratio */
+    display: block;  /* Ensures the image behaves like a block element */
+}
+
+.project-image2 {
+    width: 350px; 
+    height: 70%;  
+    border-radius: 10px;
+    object-fit: cover;  
+    display: block;  
+}
+.project-box div {
+    margin-top: 10px; /* Adds space between the image and text */
 }
 
 .download-link {
-    position: absolute; /* Position the arrow link */
-    bottom: 15px; /* Distance from bottom */
-    right: 15px; /* Distance from right */
-    font-size: 24px; /* Size of the arrow */
-    color: white; /* Color of the arrow */
-    text-decoration: none; /* Remove underline */
+    display: block;
+    margin-top: 10px;
+    font-size: 24px;
+    color: white;
 }
+
+@media screen and (max-width: 768px) {
+    .projects-container {
+        justify-content: center;
+    }
+    .project-box {
+        width: 90%;
+        margin: 10px 0;
+    }
+    .project-image {
+        max-height: 250px;
+        height: 70%;
+    }
+    .download-link {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .project-box {
+        width: 100%;
+    }
+    .project-image {
+        max-height: 200px;
+        height: 70%;
+    }
+}
+
+
 .header-container {
     display: flex;
     justify-content: center;
@@ -158,6 +204,15 @@
   transform: scale(1.05); /* Slight increase in size */
 }
 
+.awg{
+    position: relative; 
+    top: 5px; 
+    left: 50px; 
+    font-size: 32px; 
+    max-width: 300px; 
+    z-index: 10;
+}
+
 
 </style>
 <body style="background-color: black; padding: 0px; margin: 0px;">
@@ -191,45 +246,45 @@
 </script>
     <div class="projects-container">
     <div class="project-box">
-        <img src="./Atmospheric water generator protoype 1 (1).png"  alt="Project 1" class="project-image">
-           <div style="position: relative; top: 5px; left: 50px; font-size: 32px; width: 300px; z-index: 10;" ><b>Atmospheric Water Generator</b></div>
+        <img src="./Atmospheric water generator protoype 1 (1).png" alt="Project 1" class="project-image">
+        <div><b>Atmospheric Water Generator</b></div>
         <a href="path/to/document1.pdf" class="download-link" download>➔</a>
     </div>
     <div class="project-box">
-        <img src="./Screenshot 2024-10-09 135307.png" style=" filter: blur(2px); display: block; border-radius: 15px; width: 480px; height: 400px; position: relative; right: 85px; bottom: 80px;" alt="Project 2" >
-           <div style="position: relative; bottom: 70px; left: 50px; font-size: 32px; width: 300px; height: 490px; z-index: 10; " ><b>Science Research Paper 1</b></div>
+        <img src="./Screenshot 2024-10-09 135307.png" alt="Project 2" class="project-image2 blurred">
+        <div><b>Science Research Paper 1</b></div>
         <a href="path/to/document2.pdf" class="download-link" download>➔</a>
     </div>
-        <div class="project-box">
-             <img src="./WhatsApp Image 2024-10-09 at 14.16.14_3231c862.jpg" alt="Project 3" class="project-image">
-           <div style="position: relative; top: 0px; left: 50px; font-size: 32px; width: 300px; z-index: 10;" ><b>AI Powered Survey Bird</b></div>
-            <a href="path/to/document3.pdf" class="download-link" download>➔</a>
-        </div>
-        <div class="project-box">
-            <img src="./Screenshot 2024-10-09 143154.png" style=" filter: blur(2px); display: block; border-radius: 15px; width: 460px; height: 300px; position: relative; right: 65px; bottom: 0px;" alt="Project 4" >
-           <div style="position: relative; top: 15px; left: 50px; font-size: 32px; width: 300px; z-index: 10;" ><b>Science Research Paper 2</b></div>
-            <a href="path/to/document4.pdf" class="download-link" download>➔</a>
-        </div>
-        <div class="project-box">
-            <img src="path/to/image5.jpg" alt="Project 5" class="project-image">
-           <div style="position: relative; top: 0px; left: 50px; font-size: 32px; width: 300px; z-index: 10;" ><b>Moth Repelling Lamp</b></div>
-            <a href="path/to/document5.pdf" class="download-link" download>➔</a>
-        </div>
-        <div class="project-box">
-            <img src="path/to/image6.jpg" alt="Project 6" class="project-image">
-           <div style="position: relative; top: 0px; left: 50px; font-size: 32px; width: 300px; z-index: 10;" ><b>Coming Soon</b></div>
-            <a href="path/to/document6.pdf" class="download-link" download>➔</a>
-        </div>
-        <div class="project-box">
-            <img src="path/to/image7.jpg" alt="Project 7" class="project-image">
-           <div style="position: relative; top: 0px; left: 50px; font-size: 32px; width: 300px; z-index: 10;" ><b>Coming Soon</b></div>
-            <a href="path/to/document7.pdf" class="download-link" download>➔</a>
-        </div>
-        <div class="project-box">
-            <img src="path/to/image8.jpg" alt="Project 8" class="project-image">
-           <div style="position: relative; top: 0px; left: 50px; font-size: 32px; width: 300px; z-index: 10;" ><b>Coming Soon</b></div>
-            <a href="path/to/document8.pdf" class="download-link" download>➔</a>
-        </div>
+    <div class="project-box">
+        <img src="./WhatsApp Image 2024-10-09 at 14.16.14_3231c862.jpg" alt="Project 3" class="project-image">
+        <div><b>AI Powered Survey Bird</b></div>
+        <a href="path/to/document3.pdf" class="download-link" download>➔</a>
     </div>
-</body>
+    <div class="project-box">
+        <img src="./Screenshot 2024-10-09 143154.png" alt="Project 4" class="project-image2 blurred">
+        <div><b>Science Research Paper 2</b></div>
+        <a href="path/to/document4.pdf" class="download-link" download>➔</a>
+    </div>
+    <div class="project-box">
+        <img src="path/to/image5.jpg" alt="Project 5" class="project-image">
+        <div><b>Moth Repelling Lamp</b></div>
+        <a href="path/to/document5.pdf" class="download-link" download>➔</a>
+    </div>
+    <div class="project-box">
+        <img src="path/to/image6.jpg" alt="Project 6" class="project-image">
+        <div><b>Coming Soon</b></div>
+        <a href="path/to/document6.pdf" class="download-link" download>➔</a>
+    </div>
+    <div class="project-box">
+        <img src="path/to/image7.jpg" alt="Project 7" class="project-image">
+        <div><b>Coming Soon</b></div>
+        <a href="path/to/document7.pdf" class="download-link" download>➔</a>
+    </div>
+    <div class="project-box">
+        <img src="path/to/image8.jpg" alt="Project 8" class="project-image">
+        <div><b>Coming Soon</b></div>
+        <a href="path/to/document8.pdf" class="download-link" download>➔</a>
+    </div>
+</div>
+
 </html>
