@@ -15,10 +15,15 @@
             padding: 20px;
             overflow-x: hidden; 
         }
-        h1, h2, h3 {
+    
+
+        .head-texts{
             background-color: #022908;
             padding: 10px;
+
         }
+
+        
         h1 {
             font-size: 24px;
             margin-bottom: 10px;
@@ -40,123 +45,195 @@
         li {
             margin-bottom: 10px;
         }
-        header {
-            width: 100%; /* Set to 100% to make it responsive */
-            max-width: 1200px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            margin: 0 auto;
-            position: fixed;
-            top: 0;
-            z-index: 1000;
-            background-color: white;
-            border-radius: 15px;
-        }
-        header button {
-            background-color: black;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            border-radius: 10px;
-            border: none; /* Remove default button border */
-            cursor: pointer;
-        }
-        header button a {
-            color: white;
-            text-decoration: none;
-        }
+        
+        .header-container {
+    display: flex;
+    justify-content: center;
+    border-radius: 30px;
+}
+
+.main-header {
+    background-color: white;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 15px;
+    position: fixed;
+    z-index: 1000;
+    padding: 10px;
+}
+
+.header-name {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: rgb(0, 0, 0);
+    display: inline-block;
+    padding-right: 40px;
+    margin: 7px;
+    font-size: 2rem; /* Responsive font size */
+}
+
+.header-links {
+    display: flex;
+    gap: 15px; 
+    margin-right: 40px;
+}
+
+/* Mobile styles */
+.header-links {
+    display: flex; /* Default for desktop */
+}
+
+.header-links nav {
+    background-color: black;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: 'Roboto Condensed', sans-serif;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1rem; /* Responsive font size */
+}
+
+.header-links nav:hover {
+    background-color: #000000; 
+    cursor: pointer;
+    transform: scale(1.05); /* Slight increase in size */
+}
+
+.menu-toggle {
+    display: none; /* Hidden by default */
+    background: none; /* No background */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor */
+    padding: 10px; /* Some padding */
+    z-index: 1100; /* Higher than header */
+}
+
+.bar {
+    display: block; /* Stack the bars */
+    width: 25px; /* Width of the bars */
+    height: 3px; /* Height of the bars */
+    background-color: black; /* Color of the bars */
+    margin: 4px auto; /* Space between bars */
+    transition: all 0.3s; /* Smooth transition */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show button on mobile */
+    }
+
+    .header-links {
+        display: none; /* Hide links by default on mobile */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute; /* Position it absolutely */
+        background-color: white; /* Background for dropdown */
+        width: 100%; /* Full width */
+        top: 100%; /* Position below header */
+        left: 0; /* Align left */
+        border-radius: 0 0 15px 15px; /* Round the bottom corners */
+    }
+
+    .header-links.show {
+        display: flex; /* Show when toggled */
+    }
+}
+
+.button-div_header {
+  background-color: #000000; 
+  color: white;
+  font-size: 11px;
+  text-decoration: none;
+  padding: 10px 15px; 
+  border-radius: 5px; 
+  text-align: center; 
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button-div_header:hover {
+  transform: scale(1.05); /* Slight increase in size */
+}
+
         .resume-section {
             margin: 0 auto;
             max-width: 800px; 
-            padding-top: 80px; 
+            padding-top: 150px; 
         }
         .resume-section h1, .resume-section h2, .resume-section h3 {
             display: inline-block;
             border-radius: 15px;
         }
         .resume-section hr {
-            width: 100%;
+            max-width: 100%;
             margin: 0;
         }
 
-        .header {
-    background-color: white;
-    padding: 20px;
-    display: inline-block; 
-    width: 60%; 
-    margin: auto; 
-    position: relative;
-    left: 270px;
-    height: 20px;
-    border-radius: 15px;
-    position: fixed;
-}
-
-.nav-list {
-    display: flex;
-    justify-content: space-evenly; 
-    list-style: none; 
-    padding: 0;
-    position: relative;
-    bottom: 25px;
-    border-radius: 10px;
-    font-family: Roboto Condensed, sans-serif;
-}
-
-.nav-list li {
-    color: white; 
-    background-color: black; 
-    padding: 10px 15px; 
-    border-radius: 10px;
-    transition: transform 0.5s;
-}
-
-.nav-list li:hover {
-    transform: scale(1.07); 
-}
-
+            .section-att {
+        margin: 100px ;
+        color: white;
+        text-align: center;
+        font-size: 1vw;
+        }
 
 
 
     </style>
+
+    <script>
+  document.querySelector('.menu-toggle').addEventListener('click', function() {
+    const links = document.querySelector('.header-links');
+    links.classList.toggle('show'); // Toggle the 'show' class
+    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', !isExpanded); // Update aria attribute
+});
+
+</script>
+
 </head>
 <body style="padding: 0px;">
 
 
-<header class="header">
-        <nav>
-            <ul class="nav-list" style="border-radius: 20px">
-                <li><a href="./index.html" style="color: white; text-decoration: none;"> <b>HOME</b></a></li>
-                <li><a href="./index3.html" style="text-decoration: none; color: white;"><b>ABOUT ME</b></a></li>
-                <li><a href="./Resume.html" style="text-decoration: none; color: white;"><b>MY RESUME</a></b></li>
-                <li><a href="./projects.html" style="text-decoration: none; color: white;"><b>PROJECTS</button></a></li>
-                <li><a href="./contact.html" style="text-decoration: none; color: white;"><b>CONTACT</b></a></li>
-            </ul>
-        </nav>
-    </header>
+<div class="header-container">    
+    <div class="main-header">
+        <h1 class="header-name"><b>Olamiposi Otesile</b></h1>
+        <button class="menu-toggle" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <div class="header-links">
+            <nav><b><a href="./index.html" style="color: white; text-decoration: none;">HOME</a></b></nav>
+            <nav><b><a href="./index3.html" style="color: white; text-decoration: none;">ABOUT</a></b></nav>
+            <nav><b><a href="./Resume.html" style="color: white; text-decoration: none;">RESUME</a></b></nav>
+            <nav><b><a href="./projects.html" style="color: white; text-decoration: none;">PROJECTS</a></b></nav>
+            <nav><b><a href="./contact.html" style="color: white; text-decoration: none;">CONTACT</a></b></nav>
+        </div>
+    </div>
+</div>
+
 
 <div class="resume-section">
-    <h1 style="color: white; background-color: #022908;">My Resume</h1>
+    <h1 class="head-texts">My Resume</h1>
 
-    <h1 style="background-color: black; font-size: 40px;">Oluwabukunmi Olamiposi Otesile</h1>
+    <h1 >Oluwabukunmi Olamiposi Otesile</h1>
     <h2 style="font-size: 15px;">MECHATRONICS ENGINEERING ENTHUSIAST | GOAL ORIENTED STUDENT</h2>
     <p>Abeokuta, Ogun State | bootesile@gmail.com | <a href="https://linkedin.com/in/olamiposi-otesile" style="color: white;">linkedin.com/in/olamiposi-otesile</a></p>
-    <hr>
+    <hr >
 
-    <h2>Objective</h2>
+    <h2 class="head-texts" >Objective</h2>
     <p>Motivated Mechatronics Engineering student with a passion for learning engineering solutions. Eager to apply technical skills and teamwork abilities in real-world projects. Seeking opportunities to grow and contribute to innovative.</p>
     <hr>
 
-    <h2>Education</h2>
+    <h2  class="head-texts">Education</h2>
     <!-- <p>Federal University Oye-Ekiti; GPA: 4.82/5.0 <br> -->
     <p> GPA: 3.8 / 4.0 <br>
     Major: Mechatronics Engineering <br></p>
     <!-- Expected Graduation year: 2028</p> -->
     <hr>
 
-    <h3 style="color: white; background-color: #022908; display: inline-block; border-radius: 15px;  font-size: 15px;">Projects</h3>
+    <h3  class="head-texts" >Projects</h3>
         <ul>
             <li><strong style="font-size: 20px;">- Road Turbines for Street Lighting:</strong>
                 <ul>
@@ -201,14 +278,14 @@
         </ul>
         <hr style="width: 700px; margin: 0px;">
 
-        <h2 style="color: white; background-color: #022908; display: inline-block; border-radius: 15px;  font-size: 15px;">Skills</h2>
+        <h2 class="head-texts" >Skills</h2>
         <ul>
             <li><strong>Technical Skills:</strong> Python, Java (Beginner), Fusion 360, Arduino Programming,flutter, Unreal Engine, Excel, PowerPoint, Illustrator and Photoshop Designer, Software Proficiency</li>
             <li><strong>Soft Skills:</strong> Teamwork, Communication skills, Critical Thinking, Time management, Self-Motivation, Multitasking, Mentorship</li>
         </ul>
         <hr style="width: 700px; margin: 0px;">
 
-        <h2 style="color: white; background-color: #022908; display: inline-block; border-radius: 15px;  font-size: 15px;">Extracurricular Activities</h2>
+        <h2 class="head-texts" >Extracurricular Activities</h2>
         <ul>
             <li>Musician: Play 5 musical instruments professionally.</li>
             <li>Athlete: Participated in community sport games.</li>
@@ -216,7 +293,7 @@
         </ul>
         <hr style="width: 700px; margin: 0px;">
 
-        <h2 style="color: white; background-color: #022908; display: inline-block; border-radius: 15px;  font-size: 15px;">Volunteer Experience</h2>
+        <h2 class="head-texts" >Volunteer Experience</h2>
         <ul>
             <li><strong>Academic Tutor</strong>
                 <ul>
@@ -241,7 +318,7 @@
         </ul>
         <hr style="width: 700px; margin: 0px;">
 
-        <h2 style="color: white; background-color: #022908; display: inline-block; border-radius: 15px;  font-size: 15px;  font-size: 15px;">Certifications and Awards</h2>
+        <h2 class="head-texts" >Certifications and Awards</h2>
         <ul>
             <li>Certificate of Recognition as Best Student in Technological Innovation.</li>
             <li>Certificate of Academic Excellence.</li>
@@ -250,7 +327,7 @@
         </ul>
         <hr style="width: 700px; margin: 0px;">
 
-        <h2 style="color: white; background-color: #022908; display: inline-block; border-radius: 15px;">Hobbies and Interests</h2>
+        <h2 class="head-texts" >Hobbies and Interests</h2>
         <ul>
             
             <li>Classical Physics</li>
@@ -260,6 +337,9 @@
             <li>Playing Musical Instruments</li>
             <li>Engaging in Sports</li>
         </ul>
+
+    <section  class="section-att"> © Olamiposi Otesile, 2024. All rights reserved.</section>
+
     </div>
 
     
