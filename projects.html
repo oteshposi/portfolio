@@ -16,7 +16,7 @@
 .projects-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-around; /* Space between the project boxes */
     padding-top: 150px;
 }
 
@@ -34,18 +34,20 @@
     transition: transform 0.2s;
     overflow: hidden;
     font-size: 2vw;
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
 }
-
 .project-box:hover {
     transform: scale(1.05);
 }
 
 .project-image {
-    width: 100%;  /* Take up full width */
-    height: 70%;  /* Only take up 70% of the box's height */
+    width: 100%;  /* Full width of the project box */
+    height: 70%;  /* 70% height of the project box */
     border-radius: 10px;
-    object-fit: cover;  /* Ensures the image fills the width while keeping the aspect ratio */
-    display: block;  /* Ensures the image behaves like a block element */
+    object-fit: cover;  /* Maintain aspect ratio */
+    display: block;  
 }
 
 .project-image2 {
@@ -56,7 +58,7 @@
     display: block;  
 }
 .project-box div {
-    margin-top: 10px; /* Adds space between the image and text */
+    margin-top: 10px; /* Space between image and text */
 }
 
 .download-link {
