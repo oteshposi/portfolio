@@ -18,7 +18,7 @@
     }
 
     .container {
-      width: 60%;
+      width: 80%;
       max-width: 1200px;
       margin: 0 auto;
       padding: 20px;
@@ -62,16 +62,17 @@
 
     .section-att {
     color: white;
-    height: 30px; /* Keep height if you need it, otherwise you can set it to auto */
+    font-size: 1.2vw;
     display: flex; /* Use flexbox */
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
-    width: 100%; /* Full width to center it in the section */
+   
     position: relative; /* Optional: if you need relative positioning for other elements */
 }
 
 
-   .header-container {
+  
+.header-container {
     display: flex;
     justify-content: center;
     border-radius: 30px;
@@ -181,9 +182,30 @@
   transform: scale(1.05); /* Slight increase in size */
 }
 
+.about-me-container {
+    color: white;
+    background-color: #022908;
+    border-radius: 15px;
+    margin-bottom: 70px;
+    padding: 20px; /* Add padding for spacing */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 90%; /* Full width of the container */
+    max-width: 180px; /* Maximum width for larger screens */
+    margin-left: auto; /* Center the container */
+    margin-right: auto; /* Center the container */
+}
+
+.about-me-title {
+    margin: 0; /* Remove default margins */
+    font-size: 3vw; /* Responsive font size */
+    color: white;
+}
+
   </style>
 
-  <script>
+ <script>
   document.querySelector('.menu-toggle').addEventListener('click', function() {
     const links = document.querySelector('.header-links');
     links.classList.toggle('show'); // Toggle the 'show' class
@@ -195,7 +217,8 @@
 </head>
 <body>
 
-     <div class="header-container">    
+    
+    <div class="header-container">    
     <div class="main-header">
         <h1 class="header-name"><b>Olamiposi Otesile</b></h1>
         <button class="menu-toggle" aria-expanded="false">
@@ -214,7 +237,9 @@
 </div>
 
   <div class="container">
-    <div style="color: white; background-color: #022908; display: inline-block; margin-bottom: 70px; border-radius: 15px;  position: relative; left: 300px;"><h1 style="color: white; margin-left: 40px; margin-right: 40px; margin-top: 15px; font-size: 40px;">About Me</h1></div>
+<div class="about-me-container">
+    <h1 class="about-me-title">About Me</h1>
+</div>
     <div class="about-section">
       <p>
         Driven by curiosity, innovation, and a deep passion for problem-solving, I am <span style="color: #00b11b;
