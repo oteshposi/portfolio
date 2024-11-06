@@ -152,20 +152,23 @@
         display: block; /* Show button on mobile */
     }
 
-    .header-links {
-        display: none; /* Hide links by default on mobile */
-        flex-direction: column; /* Stack links vertically */
-        position: absolute; /* Position it absolutely */
-        background-color: white; /* Background for dropdown */
-        width: 100%; /* Full width */
-        top: 100%; /* Position below header */
-        left: 0; /* Align left */
-        border-radius: 0 0 15px 15px; /* Round the bottom corners */
-    }
+      /* Hidden by default on mobile */
+  .header-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      background-color: white;
+      width: 100%;
+      top: 100%;
+      left: 0;
+      border-radius: 0 0 15px 15px;
+  }
 
-    .header-links.show {
-        display: flex; /* Show when toggled */
-    }
+  /* Show links when the 'show' class is added */
+  .header-links.show {
+      display: flex; /* Ensure this has higher specificity */
+  }
+
 }
 
 .button-div_header {
@@ -207,12 +210,13 @@
   </style>
 
  <script>
-  document.querySelector('.menu-toggle').addEventListener('click', function() {
+  document.querySelector('.menu-toggle').addEventListener('click', () => {
     const links = document.querySelector('.header-links');
-    links.classList.toggle('show'); // Toggle the 'show' class
-    const isExpanded = this.getAttribute('aria-expanded') === 'true';
-    this.setAttribute('aria-expanded', !isExpanded); // Update aria attribute
+    links.classList.toggle('show');
+    console.log('Show class toggled:', links.classList.contains('show')); // Debugging line
 });
+
+
 
 </script>
 </head>
