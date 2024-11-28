@@ -414,7 +414,7 @@ custom-button:hover .button-text {
 .text-2_div-1 {
   color: white;
   width: 100%;
-  font-size: 5vw;
+  font-size: 4.9vw;
   margin: 0px;
   font-family: Roboto Condensed, sans-serif;
   display: inline-block;
@@ -422,14 +422,14 @@ custom-button:hover .button-text {
 
 .text-3_div-1 {
   color: white;
-  font-size: 5vw;
+  font-size: 4.9vw;
   margin: 0px;
   font-family: Roboto Condensed, sans-serif;
 }
 
 .text-4_div-1 {
   color: white;
-  font-size: 5vw;
+  font-size: 4.5vw;
   margin: 0px;
   font-family: Roboto Condensed, sans-serif;
   padding-bottom: 50px;
