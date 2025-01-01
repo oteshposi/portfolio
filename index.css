@@ -24,7 +24,7 @@
 }
 
 .my-skills-box{
-  background-color: #022908;
+  background-color: rgb(5, 177, 33);
   margin-top: 40px;
   border: 15px solid transparent; 
   border-radius: 15px; 
@@ -94,7 +94,7 @@ custom-button.learn-more .circle {
   margin: 0;
   width: 3rem;
   height: 3rem;
-  background: #00cf1f;
+  background: rgb(5, 177, 33);
   border-radius: 1.625rem;
 }
 
@@ -136,7 +136,7 @@ custom-button.learn-more .button-text {
   bottom: 0;
   padding: 0.75rem 0;
   margin: 0 0 0 1.85rem;
-  color: #02a71e;
+  color: rgb(5, 177, 33);
   font-weight: 700;
   line-height: 1.6;
   text-align: center;
@@ -285,7 +285,7 @@ custom-button:hover .button-text {
 }
 
 .main-header {
-    background-color: white;
+    background-color: rgb(0, 0, 0);
     max-width: 100%;
     display: flex;
     align-items: center;
@@ -298,7 +298,7 @@ custom-button:hover .button-text {
 
 .header-name {
     font-family: 'Roboto Condensed', sans-serif;
-    color: black;
+    color: rgb(5, 177, 33);
     display: inline-block;
     padding-right: 40px;
     margin: 7px;
@@ -500,73 +500,64 @@ body {
 
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* For larger screens */
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); 
     gap: 16px;
     padding: 16px;
     padding-top: 50px;
+    padding-left: 60px;
 }
 
 /* Adjust for smaller screens */
 @media (max-width: 768px) {
     .skills-container {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust to 300px for smaller screens */
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
 }
 
 /* Further adjust for mobile screens */
 @media (max-width: 480px) {
     .skills-container {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Shrink to 200px for mobile */
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
     }
 }
 
 
 .skills {
-    background: #022908;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background for the glass effect */
     color: white;
-    min-height: 250px; 
-    display: flex; /* Enables centering of content */
-    align-items: center; /* Vertically centers content */
-    justify-content: center; /* Horizontally centers content */
-    border-radius: 8px;
+    min-height: 380px;
+    max-width: 350px ;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
     text-align: center;
-    overflow: hidden; /* Prevents content overflow */
+    overflow: hidden;
     flex-direction: column;
-}
+    position: relative;
+    
+    
+    backdrop-filter: blur(2px); /* Creates the frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); 
+    
+   
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Subtle white border */
+    
+    /* Optional: Add shine for the "glass" effect */
+    box-shadow:  0 0 15px rgba(200, 200, 200, 0.5); /* Creates a glowing effect around the glass */
+  }
 
 .experience-container {
     display: flex;
-    flex-direction: column; /* Stack the heading and paragraph vertically */
-    align-items: center;    /* Horizontally center the content */
-    justify-content: center; /* Vertically center the content */
-    height: 200px; /* Adjust the height based on your layout */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
 }
 
 
-/* .skills {
-  width: 100%;
-  overflow: hidden;
-  display: grid;
-  gap: 10px;
-  padding: 40px;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
-} */
 
-/* .skills .item {
-  max-width: 100%;
-  min-height: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: #022908;
-  border-radius: 20px;
-  padding: 20px;
-  text-align: center;
-}
-
-.skills .item .image-logos img {
-  width: 60px;
-} */
 
 .div-2_div_div-2 {
   background-color: #022908;
